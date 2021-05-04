@@ -4,15 +4,16 @@ const PORT = 4000;
 
 const app = express();
 
-const handleHome=(req,res,next)=>{
-return res.send("<h1>I Love middlewares</h1>");
-}
+
 //request(req) Objsect, response(res) Objecnt
 
 const logger=(req,res,next)=>{
     console.log(`${req.method} ${req.url}`);
 next();
 }
+const handleHome=(req,res,next)=>{
+    return res.send("<h1>I Love middlewares</h1>");
+    }
 
 
 
