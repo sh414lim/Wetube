@@ -1,24 +1,26 @@
 import express from "express";
+import morgan from"morgan";
 
 const PORT = 4000;
 
 const app = express();
 
+const morganMiddleware=morgan("tiny")
 
-//request(req) Objsect, response(res) Objecnt
+    const handleHome=(req,res)=>{
+        console.log("Hello!!!")
+        return res.send("<h1>I Love middlewares</h1>");
+        }
 
-const logger=(req,res,next)=>{
-    console.log(`${req.method} ${req.url}`);
-next();
-}
-const handleHome=(req,res,next)=>{
-    return res.send("<h1>I Love middlewares</h1>");
-    }
+        const handleLogin=(req,res)=>{
+            console.log("Login");
+            return res.send("This is Login Pags")
 
-
-
-//app use는 global middleware 를 만들수 있게 해준다.
-app.get("/",logger,handleHome );
+        }
+    
+app.use(morganMiddleware);
+app.get("/",handleHome );
+app.get("/login",handleLogin)
 
 
 const handleListening=()=>console.log(`Server listening on port http://localhost:${PORT}`);
