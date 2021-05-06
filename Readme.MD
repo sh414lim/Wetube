@@ -12,7 +12,7 @@
 /users/delete -> Delete-User
 
 /videos/search
-/video/watch ->Watch Video
+/video/:id ->Watch Video
 /video/edit -> Edit Video
 /video/deleto - > Delete Video
 /videos/comment -> Comment on a video
