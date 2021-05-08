@@ -1,7 +1,7 @@
 doctype html
 html(lang="en")
   head
-    title Wetube
+    block head
   body 
-  h1 Base! 
-  include partials/footer.pug
+    block content 
+    include partials/footer.pug
