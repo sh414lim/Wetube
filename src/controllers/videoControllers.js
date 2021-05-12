@@ -1,6 +1,5 @@
 
-export const trending = (req,res)=>{
-   const videos =[
+   let videos =[
       {
          title:"First Video",
          reating:5,
@@ -26,12 +25,14 @@ export const trending = (req,res)=>{
          id:3
       }
    ];
+export const trending = (req,res)=>{
+
   return res.render("home",{pageTitle:"Home",videos})
 };
 export const see=(req,res)=> res.render("watch");
 export const edit=(req,res)=> res.render("edit");
 export const search=(req,res)=>res.send("Search");
+export const upload=(req,res)=>res.send("Video Upload")
 export const remove=(req,res)=>{
    return res.send("Veideo Remove")
 };
-export const upload=(req,res)=>res.send("Video Upload")
